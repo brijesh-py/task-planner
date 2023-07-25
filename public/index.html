@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task - Planner</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!-- Include stylesheet -->
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar shadow border-bottom border-secondary bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-auto w3-xxlarge" href="/">
+          <b class="text-danger">Task</b>
+          <b class="text-dark">Planner</b>
+        </a>
+      </div>
+    </nav>
+    <div class="my-3 container-fluid">
+      <!-- header -->
+      <header class="my-3">
+        <div class="container">
+          <div class="input-group rounded shadow p-2 border border-secondary">
+            <input
+              id="input-search"
+              type="text"
+              class="form-control"
+              placeholder="Search..."
+            />
+            <i class="bi bi-search input-group-text border"></i>
+          </div>
+        </div>
+      </header>
+      <!-- task planner tabs -->
+      <div
+        class="nav container mx-auto mt-4 mb-2 bg-white shadow rounded border border-secondary"
+        id="tash-planner-tabs"
+      >
+        <a class="nav-link active" aria-current="page" href="#">All</a>
+        <a class="nav-link" href="#">Upcomming</a>
+        <a class="nav-link" href="#">Completed</a>
+        <a
+          href="#refresh"
+          class="nav-link bi bi-arrow-clockwise text-primary w3-large"
+          id="refresh"
+        ></a>
+      </div>
+      <!-- task planner container -->
+      <div class="container my-3 mx-auto">
+        <div class="" id="show-task-planner">
+          <!-- task planner col -->
+        </div>
+      </div>
+      <!-- end of task planner -->
+      <!-- load more -->
+      <div class="d-flex justify-content-center my-3">
+        <i
+          class="bi bi-arrow-clockwise w3-text-red w3-xlarge"
+          id="load-more"
+        ></i>
+      </div>
+    </div>
+    <!-- task planner full view -->
+    <div class="container-fluid my-3" id="task-planner-full-view">
+      <div
+        class="container mx-auto p-2 bg-white rounded shadow border border-secondary"
+      >
+        <i
+          class="bi bi-x w3-xxlarge w3-text-red"
+          id="close-task-planner-full-view"
+        ></i>
+        <div class="">
+          <h3
+            class="text-danger mx-auto text-center task-planner-full-view-title"
+          ></h3>
+          <div class="my-3 task-planner-full-view-content"></div>
+        </div>
+      </div>
+    </div>
+    <!-- new task planner btn -->
+    <i
+      class="bi bi-plus w3-xlarge w3-text-red bg-white rounded shadow px-2 border"
+      id="open-task-planner"
+    ></i>
+    <!-- new task planner container -->
+    <div class="container-fluid" id="new-task-planner-container">
+      <div
+        class="container mx-auto bg-white p-2 shadow-lg rounded border border-secondary position-relative"
+      >
+        <i class="bi bi-x w3-xxlarge w3-text-red" id="close-task-planner"></i>
+        <h3 class="w3-text-red new-task-planner-heading fontweight-bold"><b>New Task Planner</b></h3>
+        <div class="my-3">
+          <div class="mb-3">
+            <label for="new-task-planner"
+              >Task Planner <b class="w3-text-red">*</b></label
+            >
+            <input
+              id="new-task-planner"
+              type="text"
+              class="form-control border border-secondary"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="new-task-planner-description"
+              >Task Planner Description
+              <b class="text-secondary">(Optional)</b></label
+            >
+            <div id="editor" class="border-0"></div>
+          </div>
+          <div class="d-flex align-items-center t-3">
+            <button class="w3-btn w3-small w3-grey me-2" id="save-draft">
+              Save Draft
+            </button>
+            <button class="w3-btn w3-small w3-red me-2" id="publish">
+              Publish
+            </button>
+            <button class="w3-btn w3-small w3-blue me-2" disabled id="update">
+              Update
+            </button>
+            <button class="w3-btn w3-small w3-grey me-2" id="cancel">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
+    <script src="./js/index.js" defer></script>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- Initialize Quill editor -->
+    <script src="./js/qull.js"></script>
+  </body>
+</html>

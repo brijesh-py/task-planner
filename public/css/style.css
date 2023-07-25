@@ -1,0 +1,108 @@
+body {
+  position: relative;
+}
+h1 {
+  font-size: 25px !important;
+}
+h2 {
+  font-size: 23px !important;
+}
+h3 {
+  font-size: 21px !important;
+}
+.bi {
+  cursor: pointer;
+}
+/* task-planner-card */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.task-planner-content {
+  max-height: 300px;
+  overflow: scroll;
+}
+.loading {
+  animation: loading 1s infinite;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* open task planner */
+#open-task-planner {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 10;
+}
+/* new task planner */
+#new-task-planner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  place-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+#new-task-planner-container.show,
+#task-planner-full-view.show {
+  display: grid;
+}
+#close-task-planner {
+  position: absolute;
+  top: -45px;
+  right: 20px;
+}
+#editor .ql-editor {
+  min-height: 200px;
+  max-height: 40vh;
+}
+.hide {
+  display: none;
+}
+#show-task-planner {
+  column-count: 2;
+}
+#show-task-planner .col {
+  break-inside: avoid-column;
+}
+/* task-planner-full-view */
+#task-planner-full-view {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  height: 110vh;
+  display: none;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+#task-planner-full-view > .container {
+  position: relative;
+}
+#close-task-planner-full-view {
+  top: -50px;
+  right: 20px;
+  position: absolute;
+}
+#task-planner-full-view .task-planner-full-view-content {
+  max-height: 70vh;
+  overflow: scroll;
+}
+
+@media screen and (max-width: 992px) {
+  #show-task-planner {
+    column-count: 1;
+  }
+  #show-task-planner .col {
+    break-inside: avoid-column;
+  }
+}
